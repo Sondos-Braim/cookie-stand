@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+  }
+  h1{
+      display: inline;
+      font-size: 3pc;
+     margin: 40px;
+  }
+  #logo{
+      margin-left: 40px;
+      width: 180px;
+  }
+header{
+     
+    background-color: gray;
+    height: 15%;
+    /* padding-left: 280px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+nav ul li a {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 80px;
+    line-height:2.8;
+    
+  }
+nav ul li {
+    display: inline-block;
+   
+    
+  }
+nav{
+    float: right;
+    /* padding-right: 250px; */
+     
+  }
+  
+
+#first img{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: 900px;
+width: 100%;}
+      /* }
+#second img{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;   
+      }
+#second{
+    margin-left: 265px;
+    }
+.column{
+     
+    float: left;
+    padding:15px;
+margin-top: 15px;
+margin-bottom: 15px;
+  } */
+
+#third img{
+    clear: both;
+    margin-top: 50px;
+    margin-left: 280px;
+    margin-bottom: 30px;
+  }
+  #third{
+    display: inline-block;
+    width:450 ;
+  }
+#thewriting{
+    clear: both;
+    height: 400px;
+    max-width: 450px;
+    float: right;
+    margin-left: 30px;
+  }
+  .text{
+    /* height: 315px;
+    overflow: scroll; */
+    /* margin-bottom: 20px; */
+    margin-top: 55px;
+  }
+footer{
+    clear: both;
+    background-color: gray;
+    height: 100px;
+    width: 100%;
+    border-style :outset ;
+    border-color: gray; 
+    text-align: center;
+    line-height: 5;
+  /* }
+  #thewriting h3{
+    font-weight: bold;
+    margin-bottom: 10px; */
+}
+button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+button:hover{
+    transition-duration: 0.35s;
+    background-color: green;
+  }
+  
+
+  table,
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table{
+      margin:50px;
+  }
+
