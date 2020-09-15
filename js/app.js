@@ -23,7 +23,7 @@ Markets.prototype.getSales = function () {
     this.total += this.CookiesperHours[k];
   }};
   Markets.prototype.render = function () {
-    for (var a=0;a<locations.length;a++){
+    // for (var a=0;a<locations.length;a++){
     var trEl = document.createElement('tr');
     tableEl.appendChild(trEl);
     var tdEl=document.createElement('td');
@@ -37,14 +37,14 @@ Markets.prototype.getSales = function () {
     var tdEl = document.createElement('td');
     trEl.appendChild(tdEl);
     tdEl.textContent = this.total;
-  }};
+  };
 
 new Markets('seattle', 23, 65, 6.3);
 new Markets('tokyo', 3, 24, 1.2);
 new Markets('dubai', 11, 38, 3.7);
-new Markets('paris', 3, 24, 1.2);
-new Markets('lima', 20, 65, 4.6);
-
+new Markets('paris', 20, 38, 2.3);
+new Markets('lima', 2, 16, 4.6);
+header();
 for (var i = 0; i < locations.length; i++) {
   locations[i].getSales();
   locations[i].render();
@@ -85,7 +85,7 @@ function footer(){
     for(var j=0;j<hourSales.length;j++){
       var hourTotal=0;
       for(var m=0;m<locations.length;m++){
-        hourTotal+=locations[m].CookiesperHours[i];
+        hourTotal+=locations[m].CookiesperHours[j];
       }
     var tdEl = document.createElement('td');
     footerRowEl.appendChild(tdEl);
@@ -99,7 +99,7 @@ for(var t=0;t<locations.length;t++){
     footerRowEl.appendChild(tdEl);
     tdEl.textContent = totalOfTotals;}
 
-header();
+
 footer();
 
 
