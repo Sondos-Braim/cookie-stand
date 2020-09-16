@@ -1,10 +1,11 @@
 'use strict';
+var form=document.getElementById('form');
 var containerEl = document.getElementById('sales');
 var tableEl = document.createElement('table');
 containerEl.appendChild(tableEl);
 var hourSales = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var locations = [];
-function Markets(name, min, max, avg) {
+function Market(name, min, max, avg) {
   this.name = name;
   this.min = min;
   this.max = max;
@@ -13,16 +14,16 @@ function Markets(name, min, max, avg) {
   this.total = 0;
   locations.push(this);
 }
-Markets.prototype.getCus = function () {
+Market.prototype.getCus = function () {
   return (getRandomNumber(this.min, this.max));
 };
-Markets.prototype.getSales = function () {
+Market.prototype.getSales = function () {
   for (var k = 0; k < hourSales.length; k++) {
     var a = Math.ceil(this.getCus() * this.avg);
     this.CookiesperHours.push(a);
     this.total += this.CookiesperHours[k];
   }};
-Markets.prototype.render = function () {
+Market.prototype.render = function () {
   // for (var a=0;a<locations.length;a++){
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
@@ -39,11 +40,11 @@ Markets.prototype.render = function () {
   tdEl.textContent = this.total;
 };
 
-new Markets('seattle', 23, 65, 6.3);
-new Markets('tokyo', 3, 24, 1.2);
-new Markets('dubai', 11, 38, 3.7);
-new Markets('paris', 20, 38, 2.3);
-new Markets('lima', 2, 16, 4.6);
+new Market('seattle', 23, 65, 6.3);
+new Market('tokyo', 3, 24, 1.2);
+new Market('dubai', 11, 38, 3.7);
+new Market('paris', 20, 38, 2.3);
+new Market('lima', 2, 16, 4.6);
 header();
 for (var i = 0; i < locations.length; i++) {
   locations[i].getSales();
@@ -98,8 +99,21 @@ function footer(){
   footerRowEl.appendChild(tdEl);
   tdEl.textContent = totalOfTotals;}
 
-
 footer();
 
 
+form.addEventListener('submit',function (event) {
+  event.preventDefault();
+  var name=event.target.name.value;
+  var min=event.target.min.value;
+  var max=event.target.max.value;
+  var avg=event.target.avg.value;
+  var location=new Market(name,min,max,avg);
+  location.getSales();
+  location.render();
+  form.reset();
+  var y = tableEl.rows.length;
+  tableEl.deleteRow(y-2);
+  footer();
 
+});

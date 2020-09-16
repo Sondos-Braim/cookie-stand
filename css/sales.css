@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+  }
+h1{
+    display: inline;
+    font-size: 3pc;
+    margin: 40px;
+  }
+#logo{
+    margin-left: 40px;
+    width: 180px;
+  }
+header{
+  background-color: gray;
+  height: 15%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+  nav ul li a {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 80px;
+    line-height:2.8;
+    
+  }
+nav ul li {
+    display: inline-block;
+   
+    
+  }
+nav{
+    float: right;
+    
+     
+  }
+  
+  table,
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table{
+      margin:50px;
+  }
+
+  fieldset {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  padding-top: 20px; 
+  padding-left: 50px;
+  border: 2px groove;
+  margin-left: 50px;
+  background-color: hsl(0deg 9% 39%);
+  }
+  input,label{
+  margin-bottom: 10px;
+  }
+  legend{
+  font-weight: bold;
+  font-size: x-large;
+  }
+  #submit{
+  background-color: black;
+  color: white;
+  margin-left: 100px;
+  }
+  #submit:hover{
+  transition-duration: 0.35s;
+  background-color:  rgb(167, 56, 56);
+  }
+  tr:first-child{
+    background-color: rgb(167, 56, 56)!important;
+    color: white;
+  }
+  tr{
+  text-align: center;  
+  }
+  td:first-child{
+    font-weight: bold;
+  }
+  tr:nth-of-type(2n+3){
+    background-color:#f2ecec;
+  }
+  tr:hover{
+    background-color: #c1b9b9;
+  }
+  label{
+      font-weight: bold;
+  }
+  
