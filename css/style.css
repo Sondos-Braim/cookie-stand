@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
   }
+  body{
+    background-color:#f8f0e7;
+  }
   h1{
       display: inline;
       font-size: 3pc;
@@ -58,14 +61,25 @@ width: 100%;}
   }
 #thewriting{
     clear: both;
-    height: 600px;
+    height: 250px;
     max-width: 450px;
     float: right;
     margin-left: 30px;
+    background-color: #e1debf;
+    margin-bottom: 300px;
+    position: relative;
+   left: 20px;
+   top: 25px;
+   padding-left: 15px;
+   padding-right: 15px;
+  
   }
   .text{
     margin-top: 45px;
     margin-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
+    color:#1d48ca;
+    font-weight: bold;
   }
 footer{
     clear: both;
@@ -82,11 +96,15 @@ button{
     background-color: black;
     color: white;
     padding: 5px;
+    margin-top: 20px;
 }
 button:hover{
     transition-duration: 0.35s;
     background-color: green;
   }
-  
+  ul li,ul p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: brown;
+  }
 
   
