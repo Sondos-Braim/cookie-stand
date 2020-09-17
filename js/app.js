@@ -109,11 +109,11 @@ form.addEventListener('submit',function (event) {
   var max=event.target.max.value;
   var avg=event.target.avg.value;
   var location=new Market(name,min,max,avg);
+  var y = tableEl.rows.length;
+  tableEl.deleteRow(y-1);
   location.getSales();
   location.render();
   form.reset();
-  var y = tableEl.rows.length;
-  tableEl.deleteRow(y-2);
   footer();
 
 });
