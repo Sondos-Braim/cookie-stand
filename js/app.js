@@ -99,6 +99,7 @@ function getRandomNumber(min, max) {
 }
 //the form
 form.addEventListener('submit',function (event) {
+    event.preventDefault();
   var name=event.target.name.value;
   var min=event.target.min.value;
   var max=event.target.max.value;
