@@ -14,6 +14,12 @@ function Market(name, min, max, avg) {
   this.total = 0;
   locations.push(this);
 }
+new Market('Seattle', 23, 65, 6.3);
+new Market('Tokyo', 3, 24, 1.2);
+new Market('Dubai', 11, 38, 3.7);
+new Market('Paris', 20, 38, 2.3);
+new Market('Lima', 2, 16, 4.6);
+
 Market.prototype.getCus = function () {
   return (getRandomNumber(this.min, this.max));
 };
@@ -24,7 +30,6 @@ Market.prototype.getSales = function () {
     this.total += this.CookiesperHours[k];
   }};
 Market.prototype.render = function () {
-  // for (var a=0;a<locations.length;a++){
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
   var tdEl=document.createElement('td');
@@ -39,23 +44,6 @@ Market.prototype.render = function () {
   trEl.appendChild(tdEl);
   tdEl.textContent = this.total;
 };
-
-new Market('seattle', 23, 65, 6.3);
-new Market('tokyo', 3, 24, 1.2);
-new Market('dubai', 11, 38, 3.7);
-new Market('paris', 20, 38, 2.3);
-new Market('lima', 2, 16, 4.6);
-header();
-for (var i = 0; i < locations.length; i++) {
-  locations[i].getSales();
-  locations[i].render();
-}
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// function table(){
-
 //table header
 function header(){
   var headerRowEl = document.createElement('tr');
@@ -70,18 +58,14 @@ function header(){
   }
   var thEl = document.createElement('th');
   headerRowEl.appendChild(thEl);
-  thEl.textContent = 'daily location total';}
-
-
-
-
+  thEl.textContent = 'Daily location total';}
 //table footer
 function footer(){
   var footerRowEl = document.createElement('tr');
   tableEl.appendChild(footerRowEl);
   var tdEl = document.createElement('td');
   footerRowEl.appendChild(tdEl);
-  tdEl.textContent='totals';
+  tdEl.textContent='Totals';
   for(var j=0;j<hourSales.length;j++){
     var hourTotal=0;
     for(var m=0;m<locations.length;m++){
@@ -99,11 +83,22 @@ function footer(){
   footerRowEl.appendChild(tdEl);
   tdEl.textContent = totalOfTotals;}
 
+function callTheRender(){
+  for (var i = 0; i < locations.length; i++) {
+    locations[i].getSales();
+    locations[i].render();
+  }}
+//calling the functions
+header();
+callTheRender();
 footer();
 
-
+//helper function
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+//the form
 form.addEventListener('submit',function (event) {
-  event.preventDefault();
   var name=event.target.name.value;
   var min=event.target.min.value;
   var max=event.target.max.value;
@@ -115,5 +110,5 @@ form.addEventListener('submit',function (event) {
   location.render();
   form.reset();
   footer();
-
 });
+
