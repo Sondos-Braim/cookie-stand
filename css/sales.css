@@ -93,8 +93,11 @@ nav{
       font-weight: bold;
   }
   input:invalid{
-    border: dashed 2px red;
+    border: solid 2px red;
   }
   input:valid{
     border: solid 2px green;
+  }
+  body{
+    padding-bottom: 50px;
   }
