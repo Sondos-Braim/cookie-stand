@@ -88,10 +88,6 @@ function callTheRender(){
     locations[i].getSales();
     locations[i].render();
   }}
-//calling the functions
-header();
-callTheRender();
-footer();
 
 //helper function
 function getRandomNumber(min, max) {
@@ -99,7 +95,7 @@ function getRandomNumber(min, max) {
 }
 //the form
 form.addEventListener('submit',function (event) {
-    event.preventDefault();
+  event.preventDefault();
   var name=event.target.name.value;
   var min=event.target.min.value;
   var max=event.target.max.value;
@@ -111,5 +107,20 @@ form.addEventListener('submit',function (event) {
   location.render();
   form.reset();
   footer();
+  localStorage.setItem('locations',JSON.stringify(locations));
+  tableEl.textContent='';
+  callTheRender();
+  footer();
 });
 
+if(localStorage.getItem('locations')){
+  locations=[];
+  var localStorageArray=JSON.parse(localStorage.getItem('locations'));
+  for (var i=0;i<localStorageArray.length;i++){
+    new Market(localStorageArray[i].name,localStorageArray[i].min,localStorageArray[i].max,localStorageArray[i].avg);
+  }
+}
+//calling the functions
+header();
+callTheRender();
+footer();
